@@ -315,6 +315,15 @@ section {
     flex-shrink: 0;
 }
 
+.brother-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
 .avatar-placeholder-bro {
     width: 120px;
     height: 120px;
