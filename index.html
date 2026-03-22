@@ -5,43 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo 的个人网站</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>你好，我是 Bingo</h1>
-            <p class="subtitle">一只黄色的拉布拉多</p>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-avatar">
+                <img src="images/bingo_photo.jpeg" alt="Bingo">
+            </div>
+            <h1>你好，我是 <span class="highlight">Bingo</span></h1>
+            <p class="hero-subtitle">一只可爱的黄色拉布拉多</p>
+            <div class="hero-tags">
+                <span class="tag">🐾 3岁</span>
+                <span class="tag">💛 黄色</span>
+                <span class="tag">🏃 热爱奔跑</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>向下滚动</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-        <main>
-            <section class="profile">
-                <div class="photo">
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎾</div>
+                    <h3>运动健将</h3>
+                    <p>我喜欢奔跑、接球和游泳。每天最期待的就是出去撒欢！</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>社交达人</h3>
+                    <p>喜欢交新朋友，不管是人类还是狗狗，见面就是好朋友！</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">😴</div>
+                    <h3>睡眠专家</h3>
+                    <p>每天保证12小时睡眠，睡眠质量一级棒！</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🍖</div>
+                    <h3>美食家</h3>
+                    <p>对美食毫无抵抗力，尤其是主人手里的零食！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">我的相册</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
                     <img src="images/bingo_photo.jpeg" alt="Bingo">
                 </div>
-                <div class="intro">
-                    <h2>关于我</h2>
-                    <p>我是一只黄色的拉布拉多，今年 3 岁了！我喜欢奔跑、玩耍和交朋友。</p>
-                    <p>我的主人是 Journey，他帮我建立了这个个人网站。</p>
+                <div class="gallery-item">
+                    <img src="images/dog.jpg" alt="Bingo">
                 </div>
-            </section>
+                <div class="gallery-item">
+                    <img src="images/bingo_photo.jpeg" alt="Bingo">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/dog.jpg" alt="Bingo">
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <section class="contact">
-                <h2>做梦联系我</h2>
-            </section>
-        </main>
+    <!-- Owner Section -->
+    <section class="owner" id="owner">
+        <div class="container">
+            <h2 class="section-title">我的主人</h2>
+            <div class="owner-content">
+                <div class="owner-avatar">
+                    <div class="avatar-placeholder">J</div>
+                </div>
+                <div class="owner-info">
+                    <h3>Journey</h3>
+                    <p>软件工程师，热爱技术，喜欢和 Bingo 一起探索世界。这个网站就是他帮我做的！</p>
+                    <div class="owner-links">
+                        <a href="https://github.com/JourneyWooooo" target="_blank" class="social-link">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="ip-section">
-            <h2>你的IP地址</h2>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">想联系我？</h2>
+            <p class="contact-desc">虽然我是一只狗狗，但你可以联系我的主人！</p>
+            <div class="contact-card">
+                <p>🐕 给我发消息，我会让主人看到的</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IP Section -->
+    <section class="ip-section">
+        <div class="container">
+            <h2>🌐 你的IP地址</h2>
             <p id="ip-address">加载中...</p>
             <p class="ip-note">这是你访问这个网站时使用的IP地址</p>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2026 Bingo. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ by Journey</p>
+            <p class="copyright">© 2026 Bingo. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
+        // IP Fetch
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
@@ -50,6 +142,24 @@
             .catch(err => {
                 document.getElementById('ip-address').textContent = '无法获取IP地址';
             });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.about-card, .gallery-item, .owner-content').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
