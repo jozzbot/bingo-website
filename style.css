@@ -441,6 +441,29 @@ footer p {
     margin-bottom: 8px;
 }
 
+.footer-made {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.footer-made .journey {
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.footer-made .openclaw {
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
 .copyright {
     font-size: 0.85rem;
     opacity: 0.6;
