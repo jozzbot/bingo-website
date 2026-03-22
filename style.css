@@ -294,6 +294,67 @@ section {
     transform: scale(1.1);
 }
 
+/* ===== Brother Section ===== */
+.brother {
+    background: linear-gradient(135deg, #e0e5ec 0%, #f5f7fa 100%);
+}
+
+.brother-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.brother-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder-bro {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0e5ec 0%, #c4c9d4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--gray);
+    font-weight: 700;
+    border: 4px solid var(--white);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.brother-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.brother-desc {
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.brother-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.brother-tags .tag {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
 /* ===== Owner Section ===== */
 .owner {
     background: var(--light);
