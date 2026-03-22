@@ -584,6 +584,12 @@ footer p {
         padding: 30px;
     }
     
+    .brother-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
     .owner-links {
         justify-content: center;
     }
