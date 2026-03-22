@@ -116,6 +116,13 @@
             <h2>🌐 你的IP地址</h2>
             <p id="ip-address">加载中...</p>
             <p class="ip-note">这是你访问这个网站时使用的IP地址</p>
+            
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="toggleLanguage()">
+                    <span class="lang-icon">🌍</span>
+                    <span class="lang-text">中文</span>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -128,6 +135,111 @@
     </footer>
 
     <script>
+        // Language translations
+        const translations = {
+            zh: {
+                heroTitle: '你好，我是 Bingo',
+                heroSubtitle: '一只可爱的黄色拉布拉多',
+                tags: ['🎂 2021年10月出生', '💛 黄色', '🏃 热爱奔跑'],
+                aboutTitle: '关于我',
+                cards: [
+                    { icon: '🎾', title: '运动健将', desc: '我喜欢奔跑、接球和游泳。每天最期待的就是出去撒欢！' },
+                    { icon: '🤝', title: '社交达人', desc: '喜欢交新朋友，不管是人类还是狗狗，见面就是好朋友！' },
+                    { icon: '😴', title: '睡眠专家', desc: '每天保证12小时睡眠，睡眠质量一级棒！' },
+                    { icon: '🍖', title: '美食家', desc: '对美食毫无抵抗力，尤其是主人手里的零食！' }
+                ],
+                galleryTitle: '我的相册',
+                ownerTitle: '我的主人',
+                ownerDesc: '热爱技术和探索，喜欢和 Bingo 一起看世界。这个网站就是他帮我做的！',
+                contactTitle: '想联系我？',
+                contactDesc: '虽然我是一只狗狗，但你可以联系我的主人！',
+                contactCard: '🐕 给我发消息，我会让主人看到的',
+                ipTitle: '🌐 你的IP地址',
+                ipLoading: '加载中...',
+                ipNote: '这是你访问这个网站时使用的IP地址',
+                scrollDown: '向下滚动',
+                langSwitch: 'English'
+            },
+            en: {
+                heroTitle: 'Hi, I am Bingo',
+                heroSubtitle: 'A lovely yellow Labrador Retriever',
+                tags: ['🎂 Born Oct 2021', '💛 Yellow', '🏃 Loves running'],
+                aboutTitle: 'About Me',
+                cards: [
+                    { icon: '🎾', title: 'Sports Star', desc: 'I love running, catching balls, and swimming. Going outside is the best part of my day!' },
+                    { icon: '🤝', title: 'Social Butterfly', desc: 'Making new friends - both humans and dogs. Everyone is my friend!' },
+                    { icon: '😴', title: 'Sleep Expert', desc: 'I get 12 hours of sleep every day. Quality rest is my superpower!' },
+                    { icon: '🍖', title: 'Foodie', desc: 'I have zero resistance to treats, especially ones from my owner!' }
+                ],
+                galleryTitle: 'My Gallery',
+                ownerTitle: 'My Owner',
+                ownerDesc: 'Loves tech and exploring. Enjoys seeing the world with Bingo. This website was made for me!',
+                contactTitle: 'Want to Connect?',
+                contactDesc: 'I am just a dog, but you can reach out to my owner!',
+                contactCard: '🐕 Send me a message, I will let my owner know',
+                ipTitle: '🌐 Your IP Address',
+                ipLoading: 'Loading...',
+                ipNote: 'This is the IP address you used to visit this website',
+                scrollDown: 'Scroll down',
+                langSwitch: '中文'
+            }
+        };
+
+        let currentLang = 'zh';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            updateContent();
+        }
+
+        function updateContent() {
+            const t = translations[currentLang];
+            
+            // Hero
+            document.querySelector('.hero h1').innerHTML = t.heroTitle.replace('Bingo', '<span class="highlight">Bingo</span>');
+            document.querySelector('.hero-subtitle').textContent = t.heroSubtitle;
+            document.querySelector('.scroll-indicator span').textContent = t.scrollDown;
+            
+            // Tags
+            const tagsContainer = document.querySelector('.hero-tags');
+            tagsContainer.innerHTML = t.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            
+            // About
+            document.querySelector('.section-title').textContent = t.aboutTitle;
+            const cards = document.querySelectorAll('.about-card');
+            t.cards.forEach((card, i) => {
+                cards[i].querySelector('.card-icon').textContent = card.icon;
+                cards[i].querySelector('h3').textContent = card.title;
+                cards[i].querySelector('p').textContent = card.desc;
+            });
+            
+            // Gallery
+            document.querySelectorAll('.section-title')[1].textContent = t.galleryTitle;
+            
+            // Owner
+            document.querySelectorAll('.section-title')[2].textContent = t.ownerTitle;
+            document.querySelector('.owner-info p').textContent = t.ownerDesc;
+            
+            // Contact
+            document.querySelectorAll('.section-title')[3].textContent = t.contactTitle;
+            document.querySelector('.contact-desc').textContent = t.contactDesc;
+            document.querySelector('.contact-card').textContent = t.contactCard;
+            
+            // IP
+            document.querySelector('.ip-section h2').textContent = t.ipTitle;
+            document.querySelector('.ip-note').textContent = t.ipNote;
+            document.querySelector('.lang-text').textContent = t.langSwitch;
+            
+            // Save preference
+            localStorage.setItem('lang', currentLang);
+        }
+
+        // Load saved language preference
+        if (localStorage.getItem('lang')) {
+            currentLang = localStorage.getItem('lang');
+            updateContent();
+        }
+
         // IP Fetch
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
@@ -135,7 +247,7 @@
                 document.getElementById('ip-address').textContent = data.ip;
             })
             .catch(err => {
-                document.getElementById('ip-address').textContent = '无法获取IP地址';
+                document.getElementById('ip-address').textContent = currentLang === 'zh' ? '无法获取IP地址' : 'Unable to get IP address';
             });
 
         // Scroll Animation
