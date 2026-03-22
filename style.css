@@ -86,6 +86,33 @@ main {
     color: #555;
 }
 
+/* IP地址部分 */
+.ip-section {
+    background: #f0f4ff;
+    padding: 40px;
+    text-align: center;
+    border-top: 2px solid #667eea;
+}
+
+.ip-section h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+#ip-address {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.ip-note {
+    color: #888;
+    font-size: 0.9rem;
+}
+
 /* 联系部分 */
 .contact {
     background: #f8f9fa;

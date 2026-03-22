@@ -30,9 +30,26 @@
             </section>
         </main>
 
+        <section class="ip-section">
+            <h2>你的IP地址</h2>
+            <p id="ip-address">加载中...</p>
+            <p class="ip-note">这是你访问这个网站时使用的IP地址</p>
+        </section>
+
         <footer>
             <p>&copy; 2026 Bingo. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(err => {
+                document.getElementById('ip-address').textContent = '无法获取IP地址';
+            });
+    </script>
 </body>
 </html>
